@@ -1,0 +1,55 @@
+html {
+    text-align: center;
+}
+body {
+    background-color: #ffe6e6;
+    background: url(heart-more-transparent.png);
+}
+table, th , td {
+    border-radius: 5px;
+    border-collapse: collapse;
+    padding: 9px; 
+    table-layout: auto;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+table tr:nth-child(odd) {
+    background-color: #FAD6CE;
+}
+table tr:nth-child(even) {
+    background-color: #FCF1EF;
+}
+input {
+    padding: 5px;
+    width: 85px;
+    background-color: #ffffff;
+    text-align: center;
+}
+form-field {
+    border-radius: 5px;
+}
+p {
+    font-family: sans-serif;
+}
+h2 {
+    font-family: sans-serif;
+}
+h4 {
+    color: #F4360D;
+    font-family: sans-serif; 
+}
+form {
+    margin-bottom: 5px;
+}
+.button-primary {
+    margin: 5px;
+    padding: 10px;
+    background-color: #F4360D;
+}
+.button-secondary {
+    margin: 5px;
+    padding: 10px;
+    background-color: #E8E5E4;
+}
+

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head> <!-- Title of the app, importing angular js library, import stylesheet and add favicon -->
+    <title>Cisnienie Krwi</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/styles.css">
+    <link rel="icon" href="favicon.png" sizes="16x16" type="image/png">
+</head>
+
+<body> 
+    <h2>Lecz Nadciśnienie Skutecznie</h2> 
+    <h4>Tabela pomiarów ciśnienia tętniczego</h4>
+    <div ng-app = "cisnienieApp" ng-controller = "patientController"></div> <!-- cisnienieApp is the root element of the AngularJS app and attaching patientController class to the view -->
+
+    <form id="form" class="form-field"> 
+        Napisz swoje imię: <input type="text" id="name"> 
+    </form> 
+
+    <button class="button-primary" onclick="disable()">Zapisać</button>  
+    <button class="button-secondary" onclick="enable()">Wróć</button> <!-- adding clickable buttons -->
+
+<!-- the first two functions are for enabling and disabling the Zapisać and Wróć button -->
+<!-- the controller is for a future phase when a patient enters in their details, their recent results will appear in the table, for now this section of code is not doing anything  -->
+<script> 
+    function disable() { 
+    document.getElementById("name").disabled = true; 
+    }
+
+    function enable() { 
+    document.getElementById("name").disabled = false; 
+    } 
+
+    var cisnienieApp = angular.module("cisnienieApp", []);
+
+    cisnienieApp.controller('patientController', function($scope) {
+        $scope.patient = {
+            firstName: "Urszula",
+            lastName: "Pietkiewicz",
+            fees:0,
+
+        statistics: [
+        {name:'', marks:0},
+        {name:'', marks:0},
+        {name:'', marks:0},
+        {name:'', marks:0},
+        {name:'', marks:1}
+        ],
+        
+        fullName: function() {
+            var patientObject;
+            patientObject = $scope.patient;
+            return patientObject.firstName + " " + patientObject.lastName;
+        }
+    };
+});
+</script>
+
+    <table> <!-- Adding table to the webpage with input fields to enter data. Each input field has placeholder value of "Tutaj" by default -->
+        <tr>
+            <th></th>
+            <th>Data</th>
+            <th>Godzina</th>
+            <th>Skurczowe</th>
+            <th>Rozkurczowe</th>
+            <th>Tętno</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+            <td>8</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+            <td><input type = "text" onfocus="this.value=''" value = "Tutaj" ng-model = "patient.firstName"></input></td>
+        </tr>
+    </table>
+</div>
+
+        <!-- this code will be used for a future phase where it will be faster to add new rows and columns to the table by using a Angular ng-repeat directive, for tnow this code is commented out  -->
+        <!--<button ng-click="count = count + 1" ng-init="count=0">
+            Zapisać
+        </button>
+        <button ng-click="count = count + 1" ng-init="count=0">
+            Cofnij
+        </button> -->
+        <!--<div ng-app = "cisnienieApp" ng-controller = "studentController">          
+        <table border = "0">
+         <tr>
+             <td>Enter first name:</td>
+                <td><input type = "text" ng-model = "student.firstName"></input></td>
+         </tr>
+            <tr>
+                <td>Enter last name: </td>
+                <td>
+                    <input type = "text" ng-model = "student.lastName"></input>
+                </td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>{{student.fullName()}}</td>
+            </tr>
+            <tr>
+                <td>Subject:</td>
+                <td>
+                    <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Marks</th>
+                        <th>Data</th>
+                        <th>Godzina</th>
+                        <th>Skurczowe</th>
+                        <th>Rozkurczowe</th>
+                        <th>Tętno</th>
+                        <th>Niemiarowość</th>
+                    </tr>
+                        <tr ng-repeat = "subject in student.subjects">
+                            <td>{{ student.name }}</td>
+                            <td>{{ subject.marks }}</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div> -->      
+    </body>
+</html>
